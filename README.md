@@ -10,6 +10,8 @@ Benjamin D Kaehler, Nicholas Bokulich, Daniel McDonald, Rob Knight, J Gregory Ca
 
 ## How to use the readytowear collection
 
+**NOTE:** *The readytowear collection currently only includes taxonomic weights generated for 16S rRNA gene sequence data using the Greengenes reference database trimmed to the V4 domain using primers 515f and 806r. Hence, the collection currently does not include weights for other marker genes or other 16S rRNA gene domains. We will accommodate these others needs in future releases, and encourage community contributions (contribution instructions coming soon). In the mean time, if you use non-V4 or non-16S rRNA gene data and wish to use bespoke classifiers, assemble your own custom taxonomic weights with q2-clawback as described [here](https://forum.qiime2.org/t/using-q2-clawback-to-assemble-taxonomic-weights/5859)*
+
 q2-feature-classifier is a plugin for [QIIME 2](https://qiime2.org/), and hence QIIME 2 must be installed to use. Before beginning this tutorial, install and activate your QIIME 2 environment.
 
 Clone readytowear to get started:

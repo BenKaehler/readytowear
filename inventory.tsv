@@ -1,0 +1,16 @@
+path	database	primer pair	description
+data/gg_13_8/515f-806r/animal-corpus.qza	gg_13_8	515f-806r	animal-corpus.qza
+data/gg_13_8/515f-806r/animal-distal-gut.qza	gg_13_8	515f-806r	animal-distal-gut.qza
+data/gg_13_8/515f-806r/animal-proximal-gut.qza	gg_13_8	515f-806r	animal-proximal-gut.qza
+data/gg_13_8/515f-806r/animal-secretion.qza	gg_13_8	515f-806r	animal-secretion.qza
+data/gg_13_8/515f-806r/animal-surface.qza	gg_13_8	515f-806r	animal-surface.qza
+data/gg_13_8/515f-806r/human-stool.qza	gg_13_8	515f-806r	human-stool.qza
+data/gg_13_8/515f-806r/plant-corpus.qza	gg_13_8	515f-806r	plant-corpus.qza
+data/gg_13_8/515f-806r/plant-rhizosphere.qza	gg_13_8	515f-806r	plant-rhizosphere.qza
+data/gg_13_8/515f-806r/plant-surface.qza	gg_13_8	515f-806r	plant-surface.qza
+data/gg_13_8/515f-806r/sediment-non-saline.qza	gg_13_8	515f-806r	sediment-non-saline.qza
+data/gg_13_8/515f-806r/sediment-saline.qza	gg_13_8	515f-806r	sediment-saline.qza
+data/gg_13_8/515f-806r/soil-non-saline.qza	gg_13_8	515f-806r	soil-non-saline.qza
+data/gg_13_8/515f-806r/surface-saline.qza	gg_13_8	515f-806r	surface-saline.qza
+data/gg_13_8/515f-806r/water-non-saline.qza	gg_13_8	515f-806r	water-non-saline.qza
+data/gg_13_8/515f-806r/water-saline.qza	gg_13_8	515f-806r	water-saline.qza

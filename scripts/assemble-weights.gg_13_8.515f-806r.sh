@@ -30,29 +30,36 @@ qiime clawback assemble-weights-from-Qiita --i-classifier $pdir/gg_13_8_otus/uni
 qiime clawback assemble-weights-from-Qiita --i-classifier $pdir/gg_13_8_otus/uniform-classifier.qza --i-reference-taxonomy $cdir/ref-tax.qza --i-reference-sequences $cdir/ref-seqs-v4.qza --p-context Deblur-Illumina-16S-V4-150nt-780653 --p-metadata-key empo_3 --p-metadata-value 'Surface (saline)' --o-class-weight $cdir/surface-saline.qza
 qiime clawback assemble-weights-from-Qiita --i-classifier $pdir/gg_13_8_otus/uniform-classifier.qza --i-reference-taxonomy $cdir/ref-tax.qza --i-reference-sequences $cdir/ref-seqs-v4.qza --p-context Deblur-Illumina-16S-V4-150nt-780653 --p-metadata-key empo_3 --p-metadata-value 'Soil (non-saline)' --o-class-weight $cdir/soil-non-saline.qza
 
-redbiom search metadata "where host_taxid==9606 and (sample_type=='stool' or sample_type=='Stool')" > $pdir/gg_13_8_otus/sample_ids
-redbiom fetch samples \
-  --from $pdir/gg_13_8_otus/sample_ids \
-  --context Deblur-Illumina-16S-V4-150nt-780653\
-  --output $pdir/gg_13_8_otus/samples.biom
-qiime tools import \
-  --type FeatureTable[Frequency] \
-  --input-path $pdir/gg_13_8_otus/samples.biom \
-  --output-path $pdir/gg_13_8_otus/samples.qza
-qiime clawback sequence-variants-from-samples \
-  --i-samples $pdir/gg_13_8_otus/samples.qza \
-  --o-sequences $pdir/gg_13_8_otus/sv.qza
-qiime feature-classifier classify-sklearn \
-  --i-classifier $pdir/gg_13_8_otus/uniform-classifier.qza \
-  --i-reads $pdir/gg_13_8_otus/sv.qza \
-  --p-confidence=-1 \
-  --o-classification $pdir/gg_13_8_otus/classification.qza
-qiime clawback generate-class-weights \
-  --i-reference-taxonomy $cdir/ref-tax.qza \
-  --i-reference-sequences $cdir/ref-seqs-v4.qza \
-  --i-samples $pdir/gg_13_8_otus/samples.qza \
-  --i-taxonomy-classification $pdir/gg_13_8_otus/classification.qza \
-  --o-class-weight $cdir/human-stool.qza
-
+for type in stool oral
+do
+  if [ $type == 'stool' ]
+  then
+    redbiom search metadata "where host_taxid==9606 and (sample_type=='stool' or sample_type=='Stool')" > $pdir/gg_13_8_otus/sample_ids
+  else
+    redbiom search metadata "where host_taxid==9606 and sample_type in ('Oral', 'oral', 'Mouth', 'mouth', 'Saliva', 'saliva')" > $pdir/gg_13_8_otus/sample_ids
+  fi
+  redbiom fetch samples \
+    --from $pdir/gg_13_8_otus/sample_ids \
+    --context Deblur-Illumina-16S-V4-150nt-780653\
+    --output $pdir/gg_13_8_otus/samples.biom
+  qiime tools import \
+    --type FeatureTable[Frequency] \
+    --input-path $pdir/gg_13_8_otus/samples.biom \
+    --output-path $pdir/gg_13_8_otus/samples.qza
+  qiime clawback sequence-variants-from-samples \
+    --i-samples $pdir/gg_13_8_otus/samples.qza \
+    --o-sequences $pdir/gg_13_8_otus/sv.qza
+  qiime feature-classifier classify-sklearn \
+    --i-classifier $pdir/gg_13_8_otus/uniform-classifier.qza \
+    --i-reads $pdir/gg_13_8_otus/sv.qza \
+    --p-confidence=-1 \
+    --o-classification $pdir/gg_13_8_otus/classification.qza
+  qiime clawback generate-class-weights \
+    --i-reference-taxonomy $cdir/ref-tax.qza \
+    --i-reference-sequences $cdir/ref-seqs-v4.qza \
+    --i-samples $pdir/gg_13_8_otus/samples.qza \
+    --i-taxonomy-classification $pdir/gg_13_8_otus/classification.qza \
+    --o-class-weight $cdir/human-$type.qza
+done
 
 rm -r $pdir/gg_13_8_otus/

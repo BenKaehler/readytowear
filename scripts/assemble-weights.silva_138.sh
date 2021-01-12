@@ -16,12 +16,12 @@ tmp=$cdir/tmp/
 mkdir $tmp
 
 ## Download Reference Data
-wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs.qza -O $cdir/full_length/ref-seqs.qza
-wget https://data.qiime2.org/2020.11/common/silva-138-99-tax.qza -O $cdir/full_length/ref-tax.qza
-wget https://data.qiime2.org/2020.11/common/silva-138-99-nb-classifier.qza -O $cdir/full_length/uniform-classifier.qza
-wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs-515-806.qza -O $cdir/515f-806r/ref-seqs.qza
-wget https://data.qiime2.org/2020.11/common/silva-138-99-tax-515-806.qza -O $cdir/515f-806r/ref-tax.qza
-wget https://data.qiime2.org/2020.11/common/silva-138-99-515-806-nb-classifier.qza -O $cdir/515f-806r/uniform-classifier.qza
+# wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs.qza -O $cdir/full_length/ref-seqs.qza
+# wget https://data.qiime2.org/2020.11/common/silva-138-99-tax.qza -O $cdir/full_length/ref-tax.qza
+# wget https://data.qiime2.org/2020.11/common/silva-138-99-nb-classifier.qza -O $cdir/full_length/uniform-classifier.qza
+# wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs-515-806.qza -O $cdir/515f-806r/ref-seqs.qza
+# wget https://data.qiime2.org/2020.11/common/silva-138-99-tax-515-806.qza -O $cdir/515f-806r/ref-tax.qza
+# wget https://data.qiime2.org/2020.11/common/silva-138-99-515-806-nb-classifier.qza -O $cdir/515f-806r/uniform-classifier.qza
 
 ## Download Sample Data
 qiime clawback fetch-Qiita-samples \
@@ -37,7 +37,7 @@ qiime clawback fetch-Qiita-samples \
   --o-samples $tmp/animal-surface.qza &
 qiime clawback fetch-Qiita-samples \
   --p-context Deblur-Illumina-16S-V4-150nt-780653 \
-  --p-metadata-value 'Animal secretion'
+  --p-metadata-value 'Animal secretion' \
   --p-metadata-key empo_3 \
   --o-samples $tmp/animal-secretion.qza &
 qiime clawback fetch-Qiita-samples \
@@ -118,6 +118,9 @@ do
     --output-path $tmp/human-$type.qza
  } &
 done
+
+## Wait for the downloads to finish
+wait
 
 ## Build Weights
 for ddir in 515f-806r full_length

@@ -1,11 +1,11 @@
 # This workflow script contains all commands required to generate the
-#     taxonomic weights found in readytowear/data/silva/*/
-# Note that temporary files are removed at the end of this workflow.
-#     Remove the last line of this script to save temporary files.
+# taxonomic weights found in readytowear/data/silva_138/*/
+# Uncomment the last line of this script to delete temporary files.
 
 # move your current working directory to readytowear/ or alter this line
 pdir=.
-njobs=6
+# set this to available memory in GB / 20 (rounded down) (or 1 if you have < 20 GB)
+njobs=3
 
 cdir=$pdir/data/silva_138/
 mkdir $cdir
@@ -16,12 +16,12 @@ tmp=$cdir/tmp/
 mkdir $tmp
 
 ## Download Reference Data
-# wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs.qza -O $cdir/full_length/ref-seqs.qza
-# wget https://data.qiime2.org/2020.11/common/silva-138-99-tax.qza -O $cdir/full_length/ref-tax.qza
-# wget https://data.qiime2.org/2020.11/common/silva-138-99-nb-classifier.qza -O $cdir/full_length/uniform-classifier.qza
-# wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs-515-806.qza -O $cdir/515f-806r/ref-seqs.qza
-# wget https://data.qiime2.org/2020.11/common/silva-138-99-tax-515-806.qza -O $cdir/515f-806r/ref-tax.qza
-# wget https://data.qiime2.org/2020.11/common/silva-138-99-515-806-nb-classifier.qza -O $cdir/515f-806r/uniform-classifier.qza
+wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs.qza -O $cdir/full_length/ref-seqs.qza
+wget https://data.qiime2.org/2020.11/common/silva-138-99-tax.qza -O $cdir/full_length/ref-tax.qza
+wget https://data.qiime2.org/2020.11/common/silva-138-99-nb-classifier.qza -O $cdir/full_length/uniform-classifier.qza
+wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs-515-806.qza -O $cdir/515f-806r/ref-seqs.qza
+wget https://data.qiime2.org/2020.11/common/silva-138-99-tax-515-806.qza -O $cdir/515f-806r/ref-tax.qza
+wget https://data.qiime2.org/2020.11/common/silva-138-99-515-806-nb-classifier.qza -O $cdir/515f-806r/uniform-classifier.qza
 
 ## Download Sample Data
 qiime clawback fetch-Qiita-samples \
@@ -119,7 +119,7 @@ do
  } &
 done
 
-## Wait for the downloads to finish
+## wait for the downloads to finish
 wait
 
 ## Build Weights

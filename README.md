@@ -56,12 +56,12 @@ qiime metadata tabulate \
 
 ### Obtaining reference sequences for full-length Greengenes or SILVA
 
-We couldn't save the full-length reference sequences in this repository because they were too big. Note that if you are only using V4, they are saved in the repo, you don't have to worry about this step. If you are using full-length reference sequences, you need them before you can train any classifier.
+We couldn't save the full-length reference sequences for Greengenes or SILVA in this repository because they were too big. Note that if you are using GTDB or only using V4, the referece sequences are saved in the repo and you don't have to worry about this step. If you are using full-length reference sequences, you need to download them before you can train any classifier.
 
 To obtain the full-length SILVA reference sequences you can run
 ```
 wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs.qza \
-  -O $pdir/data/silva_138/full_length/ref-seqs.qza
+  -O readytowear/data/silva_138/full_length/ref-seqs.qza
 ```
 
 To obtain the full-length Greengenes reference sequences you can run
@@ -72,5 +72,5 @@ qiime tools import \
   --input-path gg_13_8_otus/rep_set/99_otus.fasta \
   --type FeatureData[Sequence] \
   --output-path readytowear/data/gg_13_8/full_length/ref-seqs.qza
-rm -r $pdir/gg_13_8_otus/rep_set/99_otus.fasta
+rm -r gg_13_8_otus
 ```

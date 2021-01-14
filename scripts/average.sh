@@ -12,7 +12,7 @@ popd
 
 cdir=$pdir/data/
 
-for ddir in gg_13_8 gtdb_r89 silva_132
+for ddir in gg_13_8 gtdb_r89 silva_138
 do
   for dddir in 515f-806r full_length
   do
@@ -38,3 +38,5 @@ do
     popd
   done
 done
+
+pip uninstall -y q2-monkey-merge

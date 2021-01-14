@@ -30,7 +30,7 @@ git clone https://github.com/BenKaehler/readytowear.git
 Train a non-saline soil naive Bayes taxonomy classifier using the latest readytowear fashions:
 ```
 qiime feature-classifier fit-classifier-naive-bayes \
-  --i-reference-reads readytowear/data/gg_13_8/515f-806r/ref-seqs-v4.qza \
+  --i-reference-reads readytowear/data/gg_13_8/515f-806r/ref-seqs.qza \
   --i-reference-taxonomy readytowear/data/gg_13_8/515f-806r/ref-tax.qza \
   --i-class-weight readytowear/data/gg_13_8/515f-806r/soil-non-saline.qza \
   --o-classifier gg138_v4_soil-non-saline_classifier.qza
@@ -48,8 +48,29 @@ qiime feature-classifier classify-sklearn \
   --i-classifier gg138_v4_soil-non-saline_classifier.qza \
   --o-classification bespoke-classifier-results.qza
 
-  qiime metadata tabulate \
-    --m-input-file bespoke-classifier-results.qza \
-    --m-input-file sequences.qza \
-    --o-visualization bespoke-classifier-results.qzv
+qiime metadata tabulate \
+  --m-input-file bespoke-classifier-results.qza \
+  --m-input-file sequences.qza \
+  --o-visualization bespoke-classifier-results.qzv
+```
+
+### Obtaining reference sequences for full-length Greengenes or SILVA
+
+We couldn't save the full-length reference sequences in this repository because they were too big. Note that if you are only using V4, they are saved in the repo, you don't have to worry about this step. If you are using full-length reference sequences, you need them before you can train any classifier.
+
+To obtain the full-length SILVA reference sequences you can run
+```
+wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs.qza \
+  -O $pdir/data/silva_138/full_length/ref-seqs.qza
+```
+
+To obtain the full-length Greengenes reference sequences you can run
+```
+wget ftp://greengenes.microbio.me/greengenes_release/gg_13_5/gg_13_8_otus.tar.gz
+tar xzf gg_13_8_otus.tar.gz
+qiime tools import \
+  --input-path gg_13_8_otus/rep_set/99_otus.fasta \
+  --type FeatureData[Sequence] \
+  --output-path readytowear/data/gg_13_8/full_length/ref-seqs.qza
+rm -r $pdir/gg_13_8_otus/rep_set/99_otus.fasta
 ```

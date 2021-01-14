@@ -73,5 +73,6 @@ target/
 .DS_store
 
 data/silva*/full_length/ref-seqs.qza
+data/gg*/full_length/ref-seqs.qza
 *classifier.qza
 S*132*

@@ -15,6 +15,9 @@ Bokulich NA, Kaehler BD, Rideout JR, Dillon M, Bolyen E, Knight R, Huttley GA, C
 
 And finally do not forget to cite the reference database used (citations for individual reference databases are located in the appropriate `data` subdirectories).
 
+## Shortcut!
+
+If you just want a classifier for animal-distal-gut, animal-surface, animal-secretion, soil-non-saline, or animal-corpus EMPO 3 habitat types, or human-oral or human-stool, pretrained classifiers are available for download from [Zenodo](https://zenodo.org/record/6395539). They were all trained using Silva 138.1 using both full-length and 515f-806r trimmed reads. There is also an "average" classifier there that averages weights across 14 EMPO 3 habitat types if you are in doubt about which classifier to use. There are also uniform classifiers there, for comparison.
 
 ## How to use the readytowear collection
 
@@ -58,7 +61,13 @@ qiime metadata tabulate \
 
 We couldn't save the full-length reference sequences for Greengenes or SILVA in this repository because they were too big. Note that if you are using GTDB or only using V4, the referece sequences are saved in the repo and you don't have to worry about this step. If you are using full-length reference sequences, you need to download them before you can train any classifier.
 
-To obtain the full-length SILVA reference sequences you can run
+To obtain the full-length SILVA reference sequences for SILVA 138.1 you can run
+```
+wget https://zenodo.org/record/6395539/files/ref-seqs.qza \
+  -O readytowear/data/silva_138_1/full_length/ref-seqs.qza
+```
+
+To obtain the full-length SILVA reference sequences for SILVA 138 you can run
 ```
 wget https://data.qiime2.org/2020.11/common/silva-138-99-seqs.qza \
   -O readytowear/data/silva_138/full_length/ref-seqs.qza

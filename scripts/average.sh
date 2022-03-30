@@ -6,7 +6,7 @@ pdir=.
 
 cdir=$pdir/data/
 
-for ddir in gg_13_8 gtdb_r89 silva_138
+for ddir in gg_13_8 gtdb_r89 silva_138 silva_138_1
 do
   for dddir in 515f-806r full_length
   do

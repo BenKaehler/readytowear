@@ -103,3 +103,37 @@ data/silva_138/515f-806r/average.qza	silva_138	515f-806r	average.qza
 data/silva_138/full_length/average.qza	silva_138	full_length	average.qza
 data/gtdb_r89/515f-806r/average.qza	gtdb_r89	515f-806r	average.qza
 data/gtdb_r89/full_length/average.qza	gtdb_r89	full_length	average.qza
+data/silva_138_1/515f-806r/animal-corpus.qza	silva_138_1	515f-806r	animal-corpus.qza
+data/silva_138_1/515f-806r/animal-distal-gut.qza	silva_138_1	515f-806r	animal-distal-gut.qza
+data/silva_138_1/515f-806r/animal-proximal-gut.qza	silva_138_1	515f-806r	animal-proximal-gut.qza
+data/silva_138_1/515f-806r/animal-secretion.qza	silva_138_1	515f-806r	animal-secretion.qza
+data/silva_138_1/515f-806r/animal-surface.qza	silva_138_1	515f-806r	animal-surface.qza
+data/silva_138_1/515f-806r/average.qza	silva_138_1	515f-806r	average.qza
+data/silva_138_1/515f-806r/human-oral.qza	silva_138_1	515f-806r	human-oral.qza
+data/silva_138_1/515f-806r/human-stool.qza	silva_138_1	515f-806r	human-stool.qza
+data/silva_138_1/515f-806r/plant-corpus.qza	silva_138_1	515f-806r	plant-corpus.qza
+data/silva_138_1/515f-806r/plant-rhizosphere.qza	silva_138_1	515f-806r	plant-rhizosphere.qza
+data/silva_138_1/515f-806r/plant-surface.qza	silva_138_1	515f-806r	plant-surface.qza
+data/silva_138_1/515f-806r/sediment-non-saline.qza	silva_138_1	515f-806r	sediment-non-saline.qza
+data/silva_138_1/515f-806r/sediment-saline.qza	silva_138_1	515f-806r	sediment-saline.qza
+data/silva_138_1/515f-806r/soil-non-saline.qza	silva_138_1	515f-806r	soil-non-saline.qza
+data/silva_138_1/515f-806r/surface-saline.qza	silva_138_1	515f-806r	surface-saline.qza
+data/silva_138_1/515f-806r/water-non-saline.qza	silva_138_1	515f-806r	water-non-saline.qza
+data/silva_138_1/515f-806r/water-saline.qza	silva_138_1	515f-806r	water-saline.qza
+data/silva_138_1/full_length/animal-corpus.qza	silva_138_1	full_lengthanimal-corpus.qza
+data/silva_138_1/full_length/animal-distal-gut.qza	silva_138_1	full_lengthanimal-distal-gut.qza
+data/silva_138_1/full_length/animal-proximal-gut.qza	silva_138_1	full_lengthanimal-proximal-gut.qza
+data/silva_138_1/full_length/animal-secretion.qza	silva_138_1	full_lengthanimal-secretion.qza
+data/silva_138_1/full_length/animal-surface.qza	silva_138_1	full_lengthanimal-surface.qza
+data/silva_138_1/full_length/average.qza	silva_138_1	full_lengthaverage.qza
+data/silva_138_1/full_length/human-oral.qza	silva_138_1	full_lengthhuman-oral.qza
+data/silva_138_1/full_length/human-stool.qza	silva_138_1	full_lengthhuman-stool.qza
+data/silva_138_1/full_length/plant-corpus.qza	silva_138_1	full_lengthplant-corpus.qza
+data/silva_138_1/full_length/plant-rhizosphere.qza	silva_138_1	full_lengthplant-rhizosphere.qza
+data/silva_138_1/full_length/plant-surface.qza	silva_138_1	full_lengthplant-surface.qza
+data/silva_138_1/full_length/sediment-non-saline.qza	silva_138_1	full_lengthsediment-non-saline.qza
+data/silva_138_1/full_length/sediment-saline.qza	silva_138_1	full_lengthsediment-saline.qza
+data/silva_138_1/full_length/soil-non-saline.qza	silva_138_1	full_lengthsoil-non-saline.qza
+data/silva_138_1/full_length/surface-saline.qza	silva_138_1	full_lengthsurface-saline.qza
+data/silva_138_1/full_length/water-non-saline.qza	silva_138_1	full_lengthwater-non-saline.qza
+data/silva_138_1/full_length/water-saline.qza	silva_138_1	full_lengthwater-saline.qza
